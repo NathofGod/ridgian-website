@@ -17,7 +17,18 @@ module.exports.configureEndpoints = function (app, passport) {
 		});
 	});
 
-	
+	app.get('/hooks/contentful', function (req, res) {
+
+		var build = require('../buildsite');
+		build().build();
+		
+		// build.run();
+		res.type('text/plain');
+		res.send('You made it here');
+		
+	});
+
+
 
 	app.get('/*', function (req, res) {
 		res.render('index', {});

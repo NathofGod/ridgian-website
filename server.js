@@ -10,7 +10,7 @@ var exphbs = require('express-handlebars');
 var hbs = require('hbs');
 var http = require('http');
 var https = require('https');
-
+require('harmonize')();
 var endpoints = require('./server/endpoints');
 
 var app = express();
@@ -37,6 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 endpoints.configureEndpoints(app);
+
+
+
 
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
@@ -66,6 +69,9 @@ if (app.get('env') === 'development') {
 }
 
 if (app.get('env') !== 'development') {
+	var build = require('./buildsite');
+	build().build();
+
 	app.get("*", function (req, res, next) {
 		res.redirect("https://" + req.headers.host + "/" + req.path);
 	});
