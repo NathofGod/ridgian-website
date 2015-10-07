@@ -1,0 +1,41 @@
+<!doctype html>
+
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+
+      <title>Contentful-metalsmith plugin example</title>
+      <meta name="description" content="No description">
+      <meta name="author" content="Contentful">
+
+  </head>
+
+  <body>
+
+    {{contents}}
+        <table>
+          <thead>
+              <tr>
+                  <th>Type</th>
+                  <th>Id</th>
+                  <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each contentful.entries}}
+              <tr>
+                  <td>
+                    {{this.data.sys.contentType.sys.id}}
+                </td>
+                  <td>
+                    {{this.data.sys.id}}
+                  </td>
+                  <td>
+                    {{this.data.sys.updatedAt}}
+                  </td>
+              </tr>
+              {{/each}}
+            </tbody>
+         </table>
+  </body>
+</html>

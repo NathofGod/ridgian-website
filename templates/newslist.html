@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Contentful-metalsmith plugin example</title>
+  <meta name="description" content="No description">
+  <meta name="author" content="Contentful">
+
+</head>
+
+<div class="android-more-section">
+  <div class="android-section-title mdl-typography--display-1-color-contrast">Recent News</div>
+  <div class="android-card-container mdl-grid">
+
+    {{#each contentful.entries}}
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+      <div class="mdl-card__media">
+        <img src="https://{{this.data.fields.bodyMedia.[0].fields.file.url}}">
+      </div>
+      <div class="mdl-card__title">
+        <h4 class="mdl-card__title-text">{{this.data.fields.title}}</h4>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <span class="mdl-typography--font-light mdl-typography--subhead">{{this.data.fields.headline}}</span>
+      </div>
+      <div class="mdl-card__actions">
+        <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" ng-href="news/{{ spaceToDash this.data.fields.title}}">
+                   Read More
+        </a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

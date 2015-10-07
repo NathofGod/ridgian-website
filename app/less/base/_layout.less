@@ -1,0 +1,19 @@
+.wrapper {
+	width: 100%;
+	padding-left: @wrapper-padding;
+	padding-right: @wrapper-padding;
+	margin: 0 auto;
+	overflow-y: hidden;
+	min-height:100%;
+}
+
+// To be hidden on mobile
+.mobile-only {
+	display: none;
+}
+
+@media screen and (min-width: @wrapper-max-width){
+	.wrapper {
+		width: @wrapper-max-width !important;
+	}
+}

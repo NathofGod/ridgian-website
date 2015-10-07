@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: @body-font-size;
+  font-family: @body-font;
+}
+
+body {
+  font-family: @body-font;
+  font-size: @body-font-size;
+  color: @brand-body-font;
+  background-color: @brand-body-background;
+}
+
+a {
+  color: @brand-link;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+// Horizontal lines
+hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}

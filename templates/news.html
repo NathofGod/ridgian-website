@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>{{ data.fields.title }}</title>
+  <meta name="description" content="Page for venue">
+  <meta name="author" content="Contentful">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="news-article-header" style="background-image:url(' https://{{data.fields.bodyMedia.[0].fields.file.url}} ')">
+      <div class="android-wear-band">
+        <div class="news-article-band-text">
+          <div class="mdl-typography--display-2 mdl-typography--font-thin">{{ data.fields.title }}</div>
+          <p class="mdl-typography--headline mdl-typography--font-thin">
+            <time> {{ data.fields.publishDate }}</time>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-article-content markdown-body" data-markdown>{{ data.fields.mainBody }} </div>
+
+
+    <!--<pre>
+    {{ json data }}
+  </pre>-->
+
+
+  </div>
+</body>
+
+</html>
