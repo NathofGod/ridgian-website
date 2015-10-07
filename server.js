@@ -69,8 +69,8 @@ if (app.get('env') === 'development') {
 }
 
 if (app.get('env') !== 'development') {
-	var build = require('./buildsite');
-	build().build();
+	// var build = require('./buildsite');
+	// build().build();
 
 	app.get("*", function (req, res, next) {
 		res.redirect("https://" + req.headers.host + "/" + req.path);
