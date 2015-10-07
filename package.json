@@ -1,7 +1,9 @@
 {
   "name": "web",
   "version": "0.0.0",
-  "engines":{"node": " 4.x"},
+  "engines": {
+    "node": " 4.x"
+  },
   "private": true,
   "scripts": {
     "start": "supervisor server.js"
@@ -24,6 +26,7 @@
     "grunt-open": "^0.2.3",
     "handlebars": "^3.0.3",
     "handlebars-helper": "0.0.12",
+    "harmonize": "^1.4.4",
     "hbs": "^3.0.1",
     "highlight": "^0.2.4",
     "inherits": "^2.0.1",
