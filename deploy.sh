@@ -127,14 +127,17 @@ if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then
 fi
 
 # 5. Run grunt  
+echo Install grunt
 if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then  
-  eval $NPM_CMD install grunt-cli  
+  eval $NPM_CMD install grunt-cli -g
   exitWithMessageOnError "installing grunt failed"  
+  echo Run grunt
   ./node_modules/.bin/grunt --no-color build  
   exitWithMessageOnError "grunt failed"  
 fi  
 
 # 6. Build Static
+echo Build static site
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   ./node_modules/.bin/make build
