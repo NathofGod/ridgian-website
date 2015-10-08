@@ -1,6 +1,4 @@
-
-
-
+require('harmonize')();
 
 var Metalsmith = require('metalsmith'),
   helpers = require('metalsmith-register-helpers'),
@@ -10,7 +8,7 @@ var Metalsmith = require('metalsmith'),
   dataMarkdown = require('metalsmith-data-markdown'),
   contentful = require('contentful-metalsmith');
 
-require('harmonize')();
+
 
 module.exports = function (obj) {
   return {

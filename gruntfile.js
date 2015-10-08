@@ -158,8 +158,39 @@ module.exports = function (grunt) {
 					}
 				}
 			}
+		},
+		metalsmith: {
+			staticSiteExample: {
+				options: {
+					metadata: {
+						title: "Staitc Site",
+						description: "My Static Site"
+					},
+					source: "src",
+					destination: "public/build",
+					plugins: {
+						'metalsmith-register-helpers': {
+							directory: "./server/handlebars/helpers"
+						},
+						'metalsmith-clean': true,
+						'contentful-metalsmith': {
+							accessToken: "9c58df927542109a651d0193a7843ba16877d698b11896935565f3e336e8c20f"
+						},
+						'metalsmith-markdown': {},
+						'metalsmith-templates': {
+							engine: "handlebars",
+							directory: "templates"
+						},
+						'metalsmith-data-markdown': {
+							removeAttributeAfterwards: true
+						}
+					}
+				},
+				src: 'src',
+				dest: 'public/build'
+			}
 		}
-    });
+	});
 
 
 
@@ -175,6 +206,16 @@ module.exports = function (grunt) {
 		grunt.task.run(
 			'build',
 			'concurrent'
+			);
+	});
+
+
+
+
+	grunt.registerTask('metalsmith', [], function () {
+		grunt.loadNpmTasks('grunt-metalsmith');
+		grunt.task.run(
+			'metalsmith'
 			);
 	});
 
