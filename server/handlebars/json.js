@@ -1,4 +1,4 @@
-var Handlebars = require('Handlebars');
+var Handlebars  = require('handlebars');
 module.exports = function (obj) {
 
   function syntaxHighlight(json) {
