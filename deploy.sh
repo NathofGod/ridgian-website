@@ -141,6 +141,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "static site build failed"
 fi
 
+
 ##################################################################################################################################
 
 # Post deployment stub
