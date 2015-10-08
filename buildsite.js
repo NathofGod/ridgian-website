@@ -37,10 +37,30 @@ module.exports = function (obj) {
           if (err) console.log(err);
         });
     }
-
-
-
   }
-
 }
+
+Metalsmith(__dirname)
+  .destination('./public/build')
+  .source('src')
+  .use(markdown())
+  .use(helpers({
+    directory: 'server/handlebars/helpers'
+  }))
+  .use(clean(true))
+  .use(contentful({
+    accessToken: '9c58df927542109a651d0193a7843ba16877d698b11896935565f3e336e8c20f'
+  }))
+  .use(templates({
+    engine: 'handlebars',
+    directory: 'templates'
+  }))
+  .use(dataMarkdown({
+    removeAttributeAfterwards: true
+  }))
+  .build(function (err) {
+    console.log('Building Site');
+    if (err) console.log(err);
+  });
+
       
