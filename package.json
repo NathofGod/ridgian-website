@@ -1,9 +1,6 @@
 {
   "name": "web",
-  "version": "0.0.2",
-  "engines": {
-    "node": " 4.x"
-  },
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "start": "supervisor server.js"

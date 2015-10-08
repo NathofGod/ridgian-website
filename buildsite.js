@@ -10,6 +10,7 @@ var Metalsmith = require('metalsmith'),
   dataMarkdown = require('metalsmith-data-markdown'),
   contentful = require('contentful-metalsmith');
 
+require('harmonize')();
 
 module.exports = function (obj) {
   return {
