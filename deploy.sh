@@ -117,6 +117,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd - > /dev/null
 fi
 
+# 4. Install bower packages
 echo 2. Install bower packages
 if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then
   eval $NPM_CMD install bower
@@ -125,7 +126,20 @@ if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then
   exitWithMessageOnError "bower failed"
 fi
 
+# 5. Run grunt  
+if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then  
+  eval $NPM_CMD install grunt-cli  
+  exitWithMessageOnError "installing grunt failed"  
+  ./node_modules/.bin/grunt --no-color build  
+  exitWithMessageOnError "grunt failed"  
+fi  
 
+# 6. Build Static
+if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
+  cd "$DEPLOYMENT_TARGET"
+  ./node_modules/.bin/make build
+  exitWithMessageOnError "static site build failed"
+fi
 
 ##################################################################################################################################
 
