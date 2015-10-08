@@ -55,16 +55,19 @@
   "devDependencies": {
     "express-less": "0.0.7",
     "grunt-bower": "^0.19.0",
-    "grunt-bower-concat": "^0.5.0",
+    
     "grunt-bower-install-simple": "^1.1.4",
     "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-concat": "^0.5.1",
+    
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-qunit": "^0.7.0",
     "grunt-contrib-uglify": "^0.9.1",
+    "grunt-bower-concat": "^0.5.0",
+    "grunt-contrib-qunit": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.1",
     "grunt-inject": "^0.1.1",
     "grunt-node-inspector": "^0.2.0",
     "grunt-nodemon": "^0.4.0",
@@ -74,7 +77,7 @@
     "handlebars-helper-md": "^0.2.0",
     "handlebars-helpers": "^0.5.8",
     "harmonize": "^1.4.4",
-    "jit-grunt": "^0.9.1",
+    
     "jshint": "^2.8.0",
     "time-grunt": "^1.2.1"
   }

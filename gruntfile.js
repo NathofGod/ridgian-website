@@ -162,21 +162,7 @@ module.exports = function (grunt) {
     });
 
 
-	grunt.registerTask('build', [], function () {
-		grunt.loadNpmTasks('grunt-contrib-uglify');
-		grunt.loadNpmTasks('grunt-contrib-watch');
-		grunt.loadNpmTasks('grunt-contrib-concat');
-		grunt.loadNpmTasks('grunt-bower-concat');
-		grunt.loadNpmTasks('grunt-contrib-less');
-		grunt.loadNpmTasks('grunt-node-inspector');
-		grunt.loadNpmTasks('grunt-nodemon');
-		grunt.loadNpmTasks('grunt-newer');
-		grunt.task.run(
-			'dojs',
-			'bower_concat',
-			'newer:less'
-			);
-	});
+
     grunt.registerTask('server', [], function () {
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-watch');
@@ -192,10 +178,19 @@ module.exports = function (grunt) {
 			);
 	});
 
+	grunt.registerTask('build', [], function () {
+		grunt.loadNpmTasks('grunt-bower-concat');
+		grunt.loadNpmTasks('grunt-newer');
+		grunt.task.run(
+			'dojs',
+			'bower_concat',
+			'newer:less'
+			);
+	});
+
 	grunt.registerTask('dojs', [], function () {
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-concat');
-		grunt.loadNpmTasks('grunt-bower-concat');
 		grunt.loadNpmTasks('grunt-newer');
 		grunt.task.run(
 			'newer:concat',
