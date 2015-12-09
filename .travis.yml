@@ -8,6 +8,7 @@ deploy:
   provider: azure_web_apps
   verbose: false
   skip_cleanup: true
+  quiet: true
   on:
    node: '0.11' # this should be quoted; otherwise, 0.10 would not work
 cache:
