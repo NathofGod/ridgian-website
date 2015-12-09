@@ -4,3 +4,6 @@ node_js:
 script:
 - npm install
 - node buildsite
+deploy:  
+  provider: azure_web_apps
+  skip_cleanup: true
