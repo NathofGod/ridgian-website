@@ -7,6 +7,6 @@ script:
 deploy:  
   provider: azure_web_apps
   skip_cleanup: true
- cache:
+cache:
   directories:
-    - node_modules
+  - node_modules
