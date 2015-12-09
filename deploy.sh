@@ -109,6 +109,9 @@ fi
 # 2. Select node version
 selectNodeVersion
 
+
+echo "Node Package Install"
+
 # 3. Install npm packages
 echo Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
@@ -127,6 +130,9 @@ fi
 #  ./node_modules/.bin/grunt --no-color build  
 #  exitWithMessageOnError "grunt failed"  
 #fi  
+
+
+echo "Build Static Site"
 
 # 4. Build Static
 echo Build static site
