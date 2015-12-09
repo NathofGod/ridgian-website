@@ -6,6 +6,7 @@ script:
 - node buildsite
 deploy:  
   provider: azure_web_apps
+  verbose: true
   skip_cleanup: true
 cache:
   directories:
