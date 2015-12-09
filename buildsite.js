@@ -58,7 +58,7 @@ Metalsmith(__dirname)
     removeAttributeAfterwards: true
   }))
   .build(function (err) {
-    console.log('Building Site');
+    console.log('Building Site From Console');
     if (err) console.log(err);
   });
 
