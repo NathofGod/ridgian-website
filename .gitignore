@@ -4,3 +4,4 @@ dist
 .tscache
 .sass-cache
 bower_components
+public/build/**/*

@@ -174,7 +174,7 @@ module.exports = function (grunt) {
 						},
 						'metalsmith-clean': true,
 						'contentful-metalsmith': {
-							accessToken: "9c58df927542109a651d0193a7843ba16877d698b11896935565f3e336e8c20f"
+							accessToken: ""
 						},
 						'metalsmith-markdown': {},
 						'metalsmith-templates': {
